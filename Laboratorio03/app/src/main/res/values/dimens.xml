@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="headline_size">32sp</dimen>
+    <dimen name="secondary_headline_size">64sp</dimen>
+    <dimen name="large_gap">32dp</dimen>
+</resources>
