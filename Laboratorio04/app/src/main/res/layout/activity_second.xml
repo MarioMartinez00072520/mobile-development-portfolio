@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondActivity">
+
+
+    <TextView
+        android:id="@+id/warning_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="@string/confirm_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name_confirm_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/medium_gap"
+        android:layout_marginTop="@dimen/medium_gap"
+        android:text="@string/hint_name"
+        android:textStyle="normal|bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/warning_text_view" />
+
+    <TextView
+        android:id="@+id/email_confirm_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/hint_email"
+        android:textStyle="normal|bold"
+        app:layout_constraintStart_toStartOf="@+id/name_confirm_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/name_confirm_text_view" />
+
+    <TextView
+        android:id="@+id/phone_confirm_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/medium_gap"
+        android:layout_marginTop="@dimen/medium_gap"
+        android:text="@string/hint_phone"
+        android:textStyle="normal|bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_confirm_text_view" />
+
+    <TextView
+        android:id="@+id/phone_content_confirm_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small_gap"
+        android:text="@string/phone_test"
+        app:layout_constraintStart_toEndOf="@+id/phone_confirm_text_view"
+        app:layout_constraintTop_toTopOf="@+id/phone_confirm_text_view" />
+
+    <TextView
+        android:id="@+id/email_content_confirm_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email_test"
+        app:layout_constraintStart_toStartOf="@+id/phone_content_confirm_text_view"
+        app:layout_constraintTop_toTopOf="@+id/email_confirm_text_view" />
+
+    <TextView
+        android:id="@+id/name_content_confirm_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name_test"
+        app:layout_constraintStart_toStartOf="@+id/email_content_confirm_text_view"
+        app:layout_constraintTop_toTopOf="@+id/name_confirm_text_view" />
+
+    <Button
+        android:id="@+id/share_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/button_color"
+        android:text="Compartir"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/warning_text_view"
+        tools:layout_editor_absoluteX="158dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
