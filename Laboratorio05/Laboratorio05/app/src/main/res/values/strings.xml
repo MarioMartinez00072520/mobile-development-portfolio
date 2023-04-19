@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Laboratorio05</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_home_fragment">Billboard</string>
+    <string name="star_wars_movie_name_home_fragment">Star Wars Episoido 3: La venganza de los Sith</string>
+    <string name="star_wars_calification_home_fragment">9.8</string>
+    <string name="harry_potter_movie_name_home_fragment">Harry Potter y la Piedra Filosofal</string>
+    <string name="harry_potter_home_fragment">9.5</string>
+    <string name="category_name_movie_fragment">Ciencia Ficcion</string>
+    <string name="description_movie_fragment">La pelicula se centra en el personaje de Anakin Skywalker, quien esta siendo tentado por el Lado Oscuro de la Fuerza mientras el Imperio Galactico comienza a surgir. La trama tambien muestra la caida de la Republica Galactica y el ascenso del Emperador Palpatine.</string>
+    <string name="title_new_movie_fragment">New Movie</string>
+    <string name="name_form_new_movie_fragment">Name</string>
+    <string name="category_form_new_movie_fragment">Category</string>
+    <string name="description_form_new_movie_fragment">Description</string>
+    <string name="calification_form_new_movie_fragment">Calification</string>
+    <string name="submit_button_new_movie_fragment">SUBMIT</string>
+</resources>
