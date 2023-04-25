@@ -5,112 +5,93 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundLayout"
-    tools:context=".NewMovieFragment">
+    tools:context=".ui.movie.NewMovieFragment">
 
     <TextView
         android:id="@+id/new_movie_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/medium_gap"
-        android:text="New Movie"
+        android:text="@string/title_new_movie_fragment"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/name_card_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/medium_gap"
-        android:layout_marginStart="@dimen/medium_gap"
-        android:layout_marginEnd="@dimen/medium_gap"
-        android:backgroundTint="@color/cardLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_movie_text_view">
-
-        <TextView
-            android:id="@+id/name_card_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="Name"
-            android:textColor="@color/white" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/category_card_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/medium_gap"
-        android:layout_marginTop="@dimen/medium_gap"
-        android:layout_marginEnd="@dimen/medium_gap"
-        android:backgroundTint="@color/cardLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_card_view">
-
-        <TextView
-            android:id="@+id/category_card_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="Category"
-            android:textColor="@color/white" />
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/description_card_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/medium_gap"
-        android:layout_marginTop="@dimen/medium_gap"
-        android:layout_marginEnd="@dimen/medium_gap"
-        android:backgroundTint="@color/cardLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/category_card_view">
-
-        <TextView
-            android:id="@+id/description_card_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="Description"
-            android:textColor="@color/white" />
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/calification_card_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/medium_gap"
-        android:layout_marginTop="@dimen/medium_gap"
-        android:layout_marginEnd="@dimen/medium_gap"
-        android:backgroundTint="@color/cardLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description_card_view">
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="Calification"
-            android:textColor="@color/white" />
-    </androidx.cardview.widget.CardView>
-
     <Button
-        android:id="@+id/button"
+        android:id="@+id/submit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_gap"
         android:backgroundTint="@color/buttonColor"
-        android:text="SUBMIT"
+        android:text="@string/submit_button_new_movie_fragment"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calification_card_view" />
+        app:layout_constraintTop_toBottomOf="@+id/qualification_edit_text" />
+
+    <EditText
+        android:id="@+id/name_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_gap"
+        android:background="@color/cardLayout"
+        android:backgroundTint="@color/cardLayout"
+        android:ems="10"
+        android:inputType="text"
+        android:padding="@dimen/small_gap"
+        android:text="@string/name_form_new_movie_fragment"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/new_movie_text_view" />
+
+    <EditText
+        android:id="@+id/category_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_gap"
+        android:background="@color/cardLayout"
+        android:backgroundTint="@color/cardLayout"
+        android:ems="10"
+        android:inputType="text"
+        android:padding="@dimen/small_gap"
+        android:text="@string/category_form_new_movie_fragment"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_edit_text" />
+
+    <EditText
+        android:id="@+id/description_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_gap"
+        android:background="@color/cardLayout"
+        android:backgroundTint="@color/cardLayout"
+        android:ems="10"
+        android:inputType="text"
+        android:padding="@dimen/small_gap"
+        android:text="@string/description_form_new_movie_fragment"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_edit_text" />
+
+    <EditText
+        android:id="@+id/qualification_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_gap"
+        android:background="@color/cardLayout"
+        android:backgroundTint="@color/cardLayout"
+        android:ems="10"
+        android:inputType="text"
+        android:padding="@dimen/small_gap"
+        android:text="@string/qualification_form_new_movie_fragment"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_edit_text" />
 </androidx.constraintlayout.widget.ConstraintLayout>

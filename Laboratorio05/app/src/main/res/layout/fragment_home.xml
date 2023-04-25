@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundLayout"
-    tools:context=".HomeFragment">
+    tools:context=".ui.movie.HomeFragment">
 
     <TextView
         android:id="@+id/title_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/medium_gap"
-        android:text="Billboard"
+        android:text="@string/title_home_fragment"
         android:textColor="@color/white"
         android:textSize="32sp"
         android:textStyle="normal|bold"
@@ -55,7 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Star Wars Episoido 3: La venganza de los Sith"
+                    android:text="@string/star_wars_movie_name_home_fragment"
                     android:textColor="@color/white"
                     android:textStyle="normal|bold" />
 
@@ -64,7 +64,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
-                    android:text="9.8"
+                    android:text="@string/star_wars_calification_home_fragment"
                     android:textColor="@color/calification"
                     android:textSize="18sp"
                     android:textStyle="normal|bold" />
@@ -109,7 +109,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Harry Potter y la Piedra Filosofal"
+                    android:text="@string/harry_potter_movie_name_home_fragment"
                     android:textColor="@color/white"
                     android:textStyle="normal|bold" />
 
@@ -118,7 +118,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="9.5"
+                    android:text="@string/harry_potter_home_fragment"
                     android:textColor="@color/calification"
                     android:textStyle="normal|bold" />
             </LinearLayout>

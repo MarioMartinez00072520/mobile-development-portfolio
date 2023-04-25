@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundLayout"
-    tools:context=".MovieFragment">
+    tools:context=".ui.movie.MovieFragment">
 
 
     <ImageView
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/small_gap"
-        android:text="Star Wars Episodio 3: La venganza de los Sith"
+        android:text="@string/star_wars_movie_name_home_fragment"
         android:textColor="@color/white"
         android:textStyle="normal|bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +34,7 @@
         android:id="@+id/category_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ciencia Ficcion"
+        android:text="@string/category_name_movie_fragment"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="@+id/title_text_view"
         app:layout_constraintTop_toBottomOf="@+id/title_text_view" />
@@ -43,7 +43,7 @@
         android:id="@+id/calification_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="9.8"
+        android:text="@string/star_wars_calification_home_fragment"
         android:textColor="@color/calification"
         android:textStyle="normal|bold"
         app:layout_constraintEnd_toEndOf="@+id/title_text_view"
@@ -56,7 +56,7 @@
         android:layout_marginStart="@dimen/medium_gap"
         android:layout_marginTop="@dimen/medium_gap"
         android:layout_marginEnd="@dimen/medium_gap"
-        android:text="La pelicula se centra en el personaje de Anakin Skywalker, quien esta siendo tentado por el Lado Oscuro de la Fuerza mientras el Imperio Galactico comienza a surgir. La trama tambien muestra la caida de la Republica Galactica y el ascenso del Emperador Palpatine."
+        android:text="@string/description_movie_fragment"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
