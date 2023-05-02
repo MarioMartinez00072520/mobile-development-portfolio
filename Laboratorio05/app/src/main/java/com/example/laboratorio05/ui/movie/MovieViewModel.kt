@@ -57,7 +57,7 @@ class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
         qualification.value = ""
     }
 
-    private fun clearStatus(){
+    fun clearStatus(){
         status.value = INACTIVE
     }
     companion object {
