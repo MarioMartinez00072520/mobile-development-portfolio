@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/movie_item_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_gap"
+            android:layout_marginTop="@dimen/medium_gap"
+            android:layout_marginEnd="@dimen/medium_gap"
+            android:backgroundTint="@color/cardLayout"
+            app:cardCornerRadius="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/movie_item_image_view"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:layout_margin="@dimen/medium_gap"
+                    android:src="@mipmap/ic_image_not_available_img" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/movie_item_title_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/small_gap"
+                        android:gravity="center"
+                        android:text="@string/star_wars_movie_name_home_fragment"
+                        android:textColor="@color/white"
+                        android:textStyle="normal|bold" />
+
+                    <TextView
+                        android:id="@+id/movie_item_calification_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:text="@string/star_wars_calification_home_fragment"
+                        android:textColor="@color/calification"
+                        android:textSize="18sp"
+                        android:textStyle="normal|bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
