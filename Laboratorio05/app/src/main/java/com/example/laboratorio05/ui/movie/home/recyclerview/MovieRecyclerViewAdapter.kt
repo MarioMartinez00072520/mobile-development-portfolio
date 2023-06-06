@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.laboratorio05.data.model.MovieModel
 import com.example.laboratorio05.databinding.MovieItemBinding
-import com.example.laboratorio05.ui.movie.viewmodel.MovieViewModel
 
 class MovieRecyclerViewAdapter(
     private val clickListener: (MovieModel)-> Unit
@@ -26,7 +25,7 @@ class MovieRecyclerViewAdapter(
         holder.bind(movie, clickListener)
     }
 
-    fun setData(moviesList: List<MovieModel>){MovieViewModel
+    fun setData(moviesList: List<MovieModel>){
         movies.clear()
         movies.addAll(moviesList)
     }

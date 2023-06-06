@@ -1,9 +1,12 @@
 package com.example.laboratorio05.repositories
 
+import com.example.laboratorio05.data.dao.MovieDao
 import com.example.laboratorio05.data.model.MovieModel
 
-class MovieRepository(private val movies: MutableList<MovieModel>) {
-    fun getMovies() = movies
+class MovieRepository(private val moviesDao: MovieDao) {
+    suspend fun getMovies() = moviesDao.getAllMovies()
 
-    fun addMovies(movie: MovieModel) = movies.add(movie)
+    suspend fun addMovies(movie: MovieModel) = moviesDao.insertMovie(movie)
+
+    suspend fun getMoviesWithActors(id: Int) = moviesDao.getMovieWithActorsById(id)
 }

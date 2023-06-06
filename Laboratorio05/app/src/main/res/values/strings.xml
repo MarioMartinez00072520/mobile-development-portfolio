@@ -15,4 +15,12 @@
     <string name="description_form_new_movie_fragment">Description</string>
     <string name="qualification_form_new_movie_fragment">Calification</string>
     <string name="submit_button_new_movie_fragment">SUBMIT</string>
+    <string name="new_actor_name_edit_text">Name</string>
+    <string name="movie_category">Category</string>
+    <string name="movie_name">Name</string>
+    <string name="movie_description">Description</string>
+    <string name="movie_qualification">Qualification</string>
+    <string name="actors_table_name">Actors</string>
+    <string name="new_cast_title">New Casting</string>
+    <string name="movies_table_name">Movies</string>
 </resources>

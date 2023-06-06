@@ -20,6 +20,12 @@
         <action
             android:id="@+id/action_homeFragment_to_movieFragment"
             app:destination="@id/movieFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_newCastFragment"
+            app:destination="@id/newCastFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_newActorFragment"
+            app:destination="@id/newActorFragment" />
     </fragment>
     <fragment
         android:id="@+id/newMovieFragment"
@@ -28,7 +34,17 @@
         tools:layout="@layout/fragment_new_movie" />
     <fragment
         android:id="@+id/movieFragment"
-        android:name="com.example.laboratorio05.ui.movie.MovieFragment"
+        android:name="com.example.laboratorio05.ui.movie.details.MovieFragment"
         android:label="fragment_movie"
         tools:layout="@layout/fragment_movie" />
+    <fragment
+        android:id="@+id/newCastFragment"
+        android:name="com.example.laboratorio05.ui.cast.newcast.NewCastFragment"
+        android:label="NewCastFragment"
+        tools:layout="@layout/fragment_new_cast"/>
+    <fragment
+        android:id="@+id/newActorFragment"
+        android:name="com.example.laboratorio05.ui.actor.newactor.NewActorFragment"
+        android:label="NewActorFragment"
+        tools:layout="@layout/fragment_new_actor"/>
 </navigation>

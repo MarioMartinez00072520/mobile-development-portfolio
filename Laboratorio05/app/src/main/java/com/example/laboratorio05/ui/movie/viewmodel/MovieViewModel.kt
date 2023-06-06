@@ -3,23 +3,33 @@ package com.example.laboratorio05.ui.movie.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
+import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.laboratorio05.MovieReviewerApplication
 import com.example.laboratorio05.data.model.MovieModel
 import com.example.laboratorio05.repositories.MovieRepository
+import kotlinx.coroutines.launch
 
 class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
 
-    var title = MutableLiveData("")
+    var id = MutableLiveData(0)
+    var name = MutableLiveData("")
     var category = MutableLiveData("")
     var description = MutableLiveData("")
     var qualification = MutableLiveData("")
+    var movieId = MutableLiveData("")
     var status = MutableLiveData("")
 
-    fun getMovies() = repository.getMovies()
+    suspend fun getMovies() = repository.getMovies()
 
-    fun addMovies(movie: MovieModel) = repository.addMovies(movie)
+    suspend fun getMovieWithActorById(movieId: Int) = repository.getMoviesWithActors(movieId)
+
+    private fun addMovies(movie: MovieModel){
+        viewModelScope.launch{
+            repository.addMovies(movie)
+        }
+    }
 
     fun createMovie() {
         if (!validateData()) {
@@ -28,7 +38,7 @@ class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
         }
 
         val movie = MovieModel(
-            title.value!!,
+            name.value!!,
             category.value!!,
             description.value!!,
             qualification.value!!,
@@ -42,7 +52,7 @@ class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
 
     private fun validateData(): Boolean{
         when{
-            title.value.isNullOrEmpty() -> return false
+            name.value.isNullOrEmpty() -> return false
             category.value.isNullOrEmpty() -> return false
             description.value.isNullOrEmpty() -> return false
             qualification.value.isNullOrEmpty() -> return false
@@ -51,7 +61,7 @@ class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
     }
 
     fun clearData(){
-        title.value = ""
+        name.value = ""
         category.value = ""
         description.value = ""
         qualification.value = ""
@@ -62,15 +72,17 @@ class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
     }
 
     fun setSelectedMovie(movie: MovieModel){
-        title.value = movie.name
+        name.value = movie.name
         category.value = movie.category
         description.value = movie.description
         qualification.value = movie.qualification
+
     }
 
     companion object {
         val Factory = viewModelFactory {
             initializer {
+
                 val app = this[APPLICATION_KEY] as MovieReviewerApplication
                 MovieViewModel(app.movieRepository)
             }
@@ -81,6 +93,5 @@ class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
         const val INACTIVE = ""
 
     }
-
 
 }

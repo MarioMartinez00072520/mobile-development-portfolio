@@ -18,89 +18,108 @@
             android:id="@+id/new_movie_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/medium_gap"
+            android:layout_marginTop="64dp"
             android:text="@string/title_new_movie_fragment"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/new_movie_name_text_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_gap"
+            android:layout_marginTop="@dimen/medium_gap"
+            android:layout_marginEnd="@dimen/medium_gap"
+            android:hint="@string/movie_name"
+            android:text="@={viewmodel.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/new_movie_text_view">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/cardLayout"
+                tools:layout_editor_absoluteX="-55dp"
+                tools:layout_editor_absoluteY="496dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/new_movie_category_text_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_gap"
+            android:layout_marginTop="@dimen/small_gap"
+            android:layout_marginEnd="@dimen/medium_gap"
+            android:hint="@string/movie_category"
+            android:text="@={viewmodel.category}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/new_movie_name_text_input_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/cardLayout" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/new_movie_description_text_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_gap"
+            android:layout_marginTop="@dimen/small_gap"
+            android:layout_marginEnd="@dimen/medium_gap"
+            android:hint="@string/movie_description"
+            android:text="@={viewmodel.description}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/new_movie_category_text_input_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/cardLayout" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/new_movie_qualification_text_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_gap"
+            android:layout_marginTop="@dimen/small_gap"
+            android:layout_marginEnd="@dimen/medium_gap"
+            android:hint="@string/movie_qualification"
+            android:text="@={viewmodel.qualification}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/new_movie_description_text_input_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/cardLayout" />
+        </com.google.android.material.textfield.TextInputLayout>
+
         <Button
             android:id="@+id/submit_button"
-            android:onClick="@{()-> viewmodel.createMovie()}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_gap"
             android:backgroundTint="@color/buttonColor"
+            android:onClick="@{()-> viewmodel.createMovie()}"
             android:text="@string/submit_button_new_movie_fragment"
             android:textColor="@color/black"
+            app:iconPadding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/qualification_edit_text" />
+            app:layout_constraintTop_toBottomOf="@+id/new_movie_qualification_text_input_layout" />
 
-        <EditText
-            android:id="@+id/name_edit_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/medium_gap"
-            android:background="@color/cardLayout"
-            android:backgroundTint="@color/cardLayout"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="@dimen/small_gap"
-            android:text="@={viewmodel.title}"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/new_movie_text_view" />
-
-        <EditText
-            android:id="@+id/category_edit_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/medium_gap"
-            android:background="@color/cardLayout"
-            android:backgroundTint="@color/cardLayout"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="@dimen/small_gap"
-            android:text="@={viewmodel.category}"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/name_edit_text" />
-
-        <EditText
-            android:id="@+id/description_edit_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/medium_gap"
-            android:background="@color/cardLayout"
-            android:backgroundTint="@color/cardLayout"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="@dimen/small_gap"
-            android:text="@={viewmodel.description}"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/category_edit_text" />
-
-        <EditText
-            android:id="@+id/qualification_edit_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/medium_gap"
-            android:background="@color/cardLayout"
-            android:backgroundTint="@color/cardLayout"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="@dimen/small_gap"
-            android:text="@={viewmodel.qualification}"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/description_edit_text" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

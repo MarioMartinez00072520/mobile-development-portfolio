@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,12 +17,10 @@ import com.example.laboratorio05.data.model.MovieModel
 import com.example.laboratorio05.databinding.FragmentHomeBinding
 import com.example.laboratorio05.ui.movie.viewmodel.MovieViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
 
-    private lateinit var starWarsCardView: CardView
-    private lateinit var harryPotterCardView: CardView
-    private lateinit var addMovieFloatingActionButton: FloatingActionButton
     private lateinit var adapter: MovieRecyclerViewAdapter
     private lateinit var binding: FragmentHomeBinding
 
@@ -40,11 +39,19 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setRecyclerView(view)
+        viewLifecycleOwner.lifecycleScope.launch{
+            setRecyclerView(view)
+        }
 
-        binding.floatingActionButton.setOnClickListener {
+        binding.homeAddMovieFab.setOnClickListener {
             movieViewModel.clearData()
             it.findNavController().navigate(R.id.action_homeFragment_to_newMovieFragment)
+        }
+        binding.homeAddActorFab.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_newActorFragment)
+        }
+        binding.homeAddCastingFab.setOnClickListener{
+            it.findNavController().navigate(R.id.action_homeFragment_to_newCastFragment)
         }
     }
 
@@ -53,12 +60,12 @@ class HomeFragment : Fragment() {
         findNavController().navigate(R.id.action_homeFragment_to_movieFragment)
     }
 
-    private fun displayMovies(){
+    private suspend fun displayMovies(){
         adapter.setData(movieViewModel.getMovies())
         adapter.notifyDataSetChanged()
     }
 
-    private fun setRecyclerView(view: View) {
+    private suspend fun setRecyclerView(view: View) {
         binding.movieRecyclerView.layoutManager = LinearLayoutManager(view.context)
         adapter = MovieRecyclerViewAdapter { selectedMovie ->
             showSelectedItem(selectedMovie)

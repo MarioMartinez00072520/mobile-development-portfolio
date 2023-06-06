@@ -42,7 +42,7 @@
         </androidx.recyclerview.widget.RecyclerView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton"
+            android:id="@+id/home_add_movie_fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/medium_gap"
@@ -51,7 +51,32 @@
             android:src="@android:drawable/ic_input_add"
             app:backgroundTint="@color/buttonColor"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:focusable="true" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/home_add_actor_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/medium_gap"
+            android:layout_marginBottom="@dimen/medium_gap"
+            android:clickable="true"
+            app:backgroundTint="@color/buttonColor"
+            app:layout_constraintBottom_toTopOf="@+id/home_add_movie_fab"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/baseline_person_add_24" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/home_add_casting_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/medium_gap"
+            android:layout_marginBottom="@dimen/medium_gap"
+            android:clickable="true"
+            app:backgroundTint="@color/buttonColor"
+            app:layout_constraintBottom_toTopOf="@+id/home_add_actor_fab"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/baseline_playlist_add_24" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

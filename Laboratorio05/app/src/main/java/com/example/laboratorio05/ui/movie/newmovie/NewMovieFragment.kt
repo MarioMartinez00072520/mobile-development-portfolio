@@ -46,7 +46,6 @@ class NewMovieFragment : Fragment() {
                     }
                     status.equals(MovieViewModel.MOVIE_CREATED) -> {
                         Log.d("APP_TAG", status)
-                        Log.d("APP_TAG", movieViewModel.getMovies().toString())
 
                         movieViewModel.clearStatus()
                         findNavController().popBackStack()
