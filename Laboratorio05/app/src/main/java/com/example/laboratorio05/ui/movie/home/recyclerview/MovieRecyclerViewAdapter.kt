@@ -8,7 +8,7 @@ import com.example.laboratorio05.databinding.MovieItemBinding
 
 class MovieRecyclerViewAdapter(
     private val clickListener: (MovieModel)-> Unit
-) : RecyclerView.Adapter<MovieRecyclerViewHolder>(){
+    ) : RecyclerView.Adapter<MovieRecyclerViewHolder>(){
     private val movies = ArrayList<MovieModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieRecyclerViewHolder {
